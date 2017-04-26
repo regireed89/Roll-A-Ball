@@ -27,7 +27,7 @@ public class SteeringBehaviors : MonoBehaviour
 	void Update () 
 	{
 		playerPos = target.transform.position;
-		if (Input.GetKey ("space")) {
+		if (Input.GetKey ("z")) {
 			dis = playerPos - gameObject.transform.position;
 			norm = dis.normalized;
 			scale = norm * maxvelo;
@@ -35,7 +35,7 @@ public class SteeringBehaviors : MonoBehaviour
 			rb.AddForce (force, ForceMode.Force);
 		} 
 
-		else {
+		if(Input.GetKey("x")) {
 			dis = gameObject.transform.position - playerPos;
 			norm = dis.normalized;
 			scale = norm * maxvelo;
